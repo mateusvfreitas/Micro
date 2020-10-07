@@ -1,0 +1,1 @@
+"./gpio.obj" "./interrupt.obj" "./main.obj" "./tm4c1294ncpdt_startup_ccs.obj" "./utils.obj" "../tm4c1294ncpdt.cmd" -llibc.a 

@@ -1,0 +1,202 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000         ; main.s
+    2 00000000         ; Desenvolvido para a placa EK-TM4C1294XL
+    3 00000000         ; Prof. Guilherme Peron
+    4 00000000         ; Ver 1 19/03/2018
+    5 00000000         ; Ver 2 26/08/2018
+    6 00000000         ; Este é um projeto template.
+    7 00000000         
+    8 00000000         
+    9 00000000         ; ------------------------------------------------------
+                       -------------------------
+   10 00000000                 THUMB                        ; Instruções do tip
+                                                            o Thumb-2
+   11 00000000         ; ------------------------------------------------------
+                       -------------------------
+   12 00000000         
+   13 00000000         ; Declarações EQU - Defines
+   14 00000000         ;<NOME>         EQU <VALOR>
+   15 00000000         ; ========================
+   16 00000000         ; Definições de Valores
+   17 00000000         
+   18 00000000         
+   19 00000000         ; ------------------------------------------------------
+                       -------------------------
+   20 00000000         ; Área de Dados - Declarações de variáveis
+   21 00000000                 AREA             DATA, ALIGN=2
+   22 00000000         ; Se alguma variável for chamada em outro arquivo
+   23 00000000         ;EXPORT  <var> [DATA,SIZE=<tam>]   ; Permite chamar a va
+                       riável <var> a 
+   24 00000000         ; partir de outro arquivo
+   25 00000000         ;<var> SPACE <tam>                        ; Declara uma 
+                       variável de nome <var>
+   26 00000000         ; de <tam> bytes a partir da primeira 
+   27 00000000         ; posição da RAM  
+   28 00000000         
+   29 00000000         ; ------------------------------------------------------
+                       -------------------------
+   30 00000000         ; Área de Código - Tudo abaixo da diretiva a seguir será
+                        armazenado na memória de 
+   31 00000000         ;                  código
+   32 00000000                 AREA             |.text|, CODE, READONLY, ALIGN=
+2
+   33 00000000         
+   34 00000000         ; Se alguma função do arquivo for chamada em outro arqui
+                       vo 
+   35 00000000                 EXPORT           Start       ; Permite chamar a 
+                                                            função Start a part
+                                                            ir de 
+   36 00000000         ; outro arquivo. No caso startup.s
+   37 00000000         
+   38 00000000         ; Se chamar alguma função externa 
+   39 00000000         ;IMPORT <func>              ; Permite chamar dentro dest
+                       e arquivo uma 
+   40 00000000         ; função <func>
+   41 00000000                 IMPORT           PLL_Init
+   42 00000000                 IMPORT           SysTick_Init
+   43 00000000                 IMPORT           SysTick_Wait1ms
+   44 00000000                 IMPORT           GPIO_Init
+   45 00000000         ; ****************************************
+   46 00000000         ; Importar as funções declaradas em outros arquivos
+
+
+
+ARM Macro Assembler    Page 2 
+
+
+   47 00000000         ; ****************************************
+   48 00000000         
+   49 00000000         
+   50 00000000         ; ------------------------------------------------------
+                       -------------------------
+   51 00000000         ; Função main()
+   52 00000000         Start
+   53 00000000 F7FF FFFE       BL               PLL_Init    ;Chama a subrotina 
+                                                            para alterar o cloc
+                                                            k do microcontrolad
+                                                            or para 80MHz
+   54 00000004 F7FF FFFE       BL               SysTick_Init ;Chama a subrotina
+                                                             para inicializar o
+                                                             SysTick
+   55 00000008 F7FF FFFE       BL               GPIO_Init   ;Chama a subrotina 
+                                                            que inicializa os G
+                                                            PIO
+   56 0000000C         ; ****************************************
+   57 0000000C         ; Fazer as demais inicializações aqui.
+   58 0000000C         ; ****************************************
+   59 0000000C         
+   60 0000000C         MainLoop
+   61 0000000C         ; ****************************************
+   62 0000000C         ; Escrever código o loop principal aqui. 
+   63 0000000C         ; ****************************************
+   64 0000000C E7FE            B                MainLoop
+   65 0000000E         
+   66 0000000E         
+   67 0000000E         
+   68 0000000E         ; ------------------------------------------------------
+                       --------------------------------------------------------
+                       -----------
+   69 0000000E         ; Fim do Arquivo
+   70 0000000E         ; ------------------------------------------------------
+                       --------------------------------------------------------
+                       ----------- 
+   71 0000000E 00 00           ALIGN                        ;Garante que o fim 
+                                                            da seção está alinh
+                                                            ada 
+   72 00000010                 END                          ;Fim do arquivo
+Command Line: --debug --xref --diag_suppress=9931 --cpu=Cortex-M4.fp.sp --apcs=
+interwork --depend=.\objects\main.d -o.\objects\main.o -IC:\Keil_v5\ARM\PACK\Ke
+il\TM4C_DFP\1.1.0\Device\Include\TM4C129 -IC:\Keil_v5\ARM\CMSIS\Include --prede
+fine="__EVAL SETA 1" --predefine="__UVISION_VERSION SETA 531" --predefine="TM4C
+1294NCPDT SETA 1" --list=.\listings\main.lst main.s
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+DATA 00000000
+
+Symbol: DATA
+   Definitions
+      At line 21 in file main.s
+   Uses
+      None
+Comment: DATA unused
+1 symbol
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+.text 00000000
+
+Symbol: .text
+   Definitions
+      At line 32 in file main.s
+   Uses
+      None
+Comment: .text unused
+MainLoop 0000000C
+
+Symbol: MainLoop
+   Definitions
+      At line 60 in file main.s
+   Uses
+      At line 64 in file main.s
+Comment: MainLoop used once
+Start 00000000
+
+Symbol: Start
+   Definitions
+      At line 52 in file main.s
+   Uses
+      At line 35 in file main.s
+Comment: Start used once
+3 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+External symbols
+
+GPIO_Init 00000000
+
+Symbol: GPIO_Init
+   Definitions
+      At line 44 in file main.s
+   Uses
+      At line 55 in file main.s
+Comment: GPIO_Init used once
+PLL_Init 00000000
+
+Symbol: PLL_Init
+   Definitions
+      At line 41 in file main.s
+   Uses
+      At line 53 in file main.s
+Comment: PLL_Init used once
+SysTick_Init 00000000
+
+Symbol: SysTick_Init
+   Definitions
+      At line 42 in file main.s
+   Uses
+      At line 54 in file main.s
+Comment: SysTick_Init used once
+SysTick_Wait1ms 00000000
+
+Symbol: SysTick_Wait1ms
+   Definitions
+      At line 43 in file main.s
+   Uses
+      None
+Comment: SysTick_Wait1ms unused
+4 symbols
+342 symbols in table
