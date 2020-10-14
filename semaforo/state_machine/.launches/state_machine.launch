@@ -4,7 +4,7 @@
 <stringAttribute key="com.ti.ccstudio.debug.debugModel.ATTR_PROGRAM.Tiva TM4C1294NCPDT.ccxml.Stellaris In-Circuit Debug Interface/CORTEX_M4_0" value="${build_artifact:state_machine}"/>
 <stringAttribute key="com.ti.ccstudio.debug.debugModel.ATTR_PROJECT.Tiva TM4C1294NCPDT.ccxml.Stellaris In-Circuit Debug Interface/CORTEX_M4_0" value="state_machine"/>
 <stringAttribute key="com.ti.ccstudio.debug.debugModel.ATTR_TARGET_CONFIG" value="${target_config_active_default:state_machine}"/>
-<stringAttribute key="com.ti.ccstudio.debug.debugModel.MRU_PROGRAM.Tiva TM4C1294NCPDT.ccxml.Stellaris In-Circuit Debug Interface/CORTEX_M4_0" value="/home/frizzo/Documents/UTFPR/sistemas_micro/Micro/state_machine/Debug/state_machine.out"/>
+<stringAttribute key="com.ti.ccstudio.debug.debugModel.MRU_PROGRAM.Tiva TM4C1294NCPDT.ccxml.Stellaris In-Circuit Debug Interface/CORTEX_M4_0" value="/home/frizzo/Documents/UTFPR/sistemas_micro/Micro/semaforo/state_machine/Debug/state_machine.out"/>
 <listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_PATHS">
 <listEntry value="/state_machine"/>
 </listAttribute>

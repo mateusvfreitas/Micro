@@ -1,7 +1,7 @@
 ******************************************************************************
                   TI ARM Linker Unix v20.2.1                   
 ******************************************************************************
->> Linked Wed Oct  7 17:46:15 2020
+>> Linked Wed Oct  7 17:59:09 2020
 
 OUTPUT FILE NAME:   <state_machine.out>
 ENTRY POINT SYMBOL: "_c_int00_noargs"  address: 0000088d
