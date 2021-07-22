@@ -123,7 +123,7 @@ int main(void)
     enableUART();
     enableTimer();
 
-    print("Start 1%");
+    print("\r\nStart 1%");
 
     while (1) {
         inChar();
